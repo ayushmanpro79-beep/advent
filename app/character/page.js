@@ -4,11 +4,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Lock, UserRoundCheck } from "lucide-react";
 import { Brand } from "@/components/Brand";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { StatGrid } from "@/components/StatGrid";
 import { useAuth } from "@/contexts/AuthContext";
 import { authedFetch } from "@/lib/http";
-import { classes, races } from "@/lib/game/config";
-import { BASE_STAT_TOTAL, buildFinalStats, STAT_KEYS } from "@/lib/game/stats";
+import { classDetails, races } from "@/lib/game/config";
+import { BASE_STAT_TOTAL, buildFinalStats, STAT_KEYS, STAT_LABELS } from "@/lib/game/stats";
 import styles from "./page.module.css";
 
 export default function CharacterPage() {
@@ -29,6 +30,7 @@ export default function CharacterPage() {
   const [error, setError] = useState("");
   const total = STAT_KEYS.reduce((sum, key) => sum + Number(baseStats[key] || 0), 0);
   const { finalStats, bonusStat } = buildFinalStats(className, baseStats);
+  const selectedClass = classDetails.find((item) => item.name === className);
 
   function changeStat(key, value) {
     setBaseStats((current) => ({
@@ -60,8 +62,9 @@ export default function CharacterPage() {
   }
 
   return (
-    <main className={styles.page}>
-      <section className={styles.form}>
+    <ProtectedRoute requireCharacter={false}>
+      <main className={styles.page}>
+        <section className={styles.form}>
         <Brand compact />
         <h1>Create your permanent character</h1>
         <p>
@@ -84,11 +87,28 @@ export default function CharacterPage() {
           <label>
             Class
             <select value={className} onChange={(event) => setClassName(event.target.value)}>
-              {classes.map((item) => (
-                <option key={item}>{item}</option>
+              {classDetails.map((item) => (
+                <option key={item.name} value={item.name}>
+                  {item.name} (+3 {item.bonusStat})
+                </option>
               ))}
             </select>
           </label>
+        </div>
+        <div className={styles.classGrid}>
+          {classDetails.map((item) => (
+            <button
+              className={item.name === className ? styles.classSelected : ""}
+              key={item.name}
+              onClick={() => setClassName(item.name)}
+              type="button"
+            >
+              <strong>{item.name}</strong>
+              <span>
+                +3 {item.bonusStat} · {item.bonusLabel}
+              </span>
+            </button>
+          ))}
         </div>
         <div className={styles.statEditor}>
           <div className={styles.total}>
@@ -99,7 +119,10 @@ export default function CharacterPage() {
           </div>
           {STAT_KEYS.map((key) => (
             <label key={key}>
-              {key}
+              <span>
+                {key}
+                <small>{STAT_LABELS[key]}</small>
+              </span>
               <input
                 type="number"
                 min="1"
@@ -110,14 +133,16 @@ export default function CharacterPage() {
             </label>
           ))}
         </div>
-        <div className={styles.bonus}>Class bonus: +3 {bonusStat}</div>
+        <div className={styles.bonus}>
+          {selectedClass?.name} class bonus: +3 {bonusStat} ({selectedClass?.bonusLabel})
+        </div>
         {error ? <div className={styles.error}>{error}</div> : null}
         <button type="button" onClick={saveCharacter} className={styles.primary}>
           <UserRoundCheck size={19} /> Save Character
         </button>
-      </section>
+        </section>
 
-      <section className={styles.preview}>
+        <section className={styles.preview}>
         <div className={styles.locked}>
           <Lock size={18} /> One-time account character
         </div>
@@ -127,8 +152,12 @@ export default function CharacterPage() {
           <br />
           {race}
         </p>
+        <div className={styles.lockNote}>
+          Base stats total {BASE_STAT_TOTAL}. Final sheet includes +3 {bonusStat} from {className}.
+        </div>
         <StatGrid stats={finalStats} />
-      </section>
-    </main>
+        </section>
+      </main>
+    </ProtectedRoute>
   );
 }

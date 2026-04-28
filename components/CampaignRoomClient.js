@@ -6,6 +6,7 @@ import { AppShell } from "@/components/AppShell";
 import { ChatMessage } from "@/components/ChatMessage";
 import { DmPanel } from "@/components/DmPanel";
 import { PlayerList } from "@/components/PlayerList";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { TurnOrder } from "@/components/TurnOrder";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCampaignRoom } from "@/hooks/useCampaignRoom";
@@ -64,8 +65,9 @@ export function CampaignRoomClient({ campaignId }) {
   }
 
   return (
-    <AppShell campaignTitle={campaign?.name || "Campaign"} campaignStatus={campaign?.status || "Loading"}>
-      <div className={styles.room}>
+    <ProtectedRoute>
+      <AppShell campaignTitle={campaign?.name || "Campaign"} campaignStatus={campaign?.status || "Loading"}>
+        <div className={styles.room}>
         <section className={styles.story}>
           <div className={styles.roomHeader}>
             <div>
@@ -149,7 +151,8 @@ export function CampaignRoomClient({ campaignId }) {
           </section>
           <PlayerList players={players} />
         </aside>
-      </div>
-    </AppShell>
+        </div>
+      </AppShell>
+    </ProtectedRoute>
   );
 }

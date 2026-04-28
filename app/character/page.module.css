@@ -86,6 +86,56 @@
   gap: 14px;
 }
 
+.classGrid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.classGrid button {
+  min-height: 72px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  display: grid;
+  gap: 5px;
+  padding: 12px;
+  color: #30384a;
+  text-align: left;
+}
+
+.classGrid .classSelected {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.classGrid span {
+  color: var(--muted-strong);
+  font-size: 12px;
+}
+
+.statEditor label span {
+  display: grid;
+  gap: 2px;
+}
+
+.statEditor small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.lockNote {
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fbfbfe;
+  color: var(--muted-strong);
+  padding: 12px;
+  line-height: 1.5;
+}
+
 .primary {
   border: 0;
   width: 100%;

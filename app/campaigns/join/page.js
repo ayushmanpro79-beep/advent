@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AppShell } from "@/components/AppShell";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { useAuth } from "@/contexts/AuthContext";
 import { authedFetch } from "@/lib/http";
 import styles from "./page.module.css";
@@ -35,9 +36,10 @@ export default function JoinCampaignPage() {
   }
 
   return (
-    <AppShell>
-      <div className={styles.page}>
-        <section className={styles.card}>
+    <ProtectedRoute>
+      <AppShell>
+        <div className={styles.page}>
+          <section className={styles.card}>
           <h1>Join Campaign</h1>
           <p>Enter an invite code from a friend to preview and join their campaign room.</p>
           <label>
@@ -63,8 +65,9 @@ export default function JoinCampaignPage() {
               {error ? <p className={styles.error}>{error}</p> : null}
             </div>
           ) : null}
-        </section>
-      </div>
-    </AppShell>
+          </section>
+        </div>
+      </AppShell>
+    </ProtectedRoute>
   );
 }

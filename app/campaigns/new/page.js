@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AppShell } from "@/components/AppShell";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { useAuth } from "@/contexts/AuthContext";
 import { authedFetch } from "@/lib/http";
 import styles from "./page.module.css";
@@ -38,9 +39,10 @@ export default function NewCampaignPage() {
   }
 
   return (
-    <AppShell>
-      <div className={styles.page}>
-        <section className={styles.card}>
+    <ProtectedRoute>
+      <AppShell>
+        <div className={styles.page}>
+          <section className={styles.card}>
           <h1>Create New Campaign</h1>
           <p>Set up a campaign room for solo or multiplayer testing. Max players is fixed at 4.</p>
           <label>
@@ -85,8 +87,9 @@ export default function NewCampaignPage() {
               <Link href={`/campaigns/${campaignId}`}>Enter playthrough</Link>
             </div>
           ) : null}
-        </section>
-      </div>
-    </AppShell>
+          </section>
+        </div>
+      </AppShell>
+    </ProtectedRoute>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { LogIn, Sparkles } from "lucide-react";
 import { Brand } from "@/components/Brand";
@@ -8,7 +9,12 @@ import styles from "./page.module.css";
 
 export default function LoginPage() {
   const router = useRouter();
-  const { login, firebaseReady } = useAuth();
+  const { login, firebaseReady, user, character, loading } = useAuth();
+
+  useEffect(() => {
+    if (loading || !user) return;
+    router.replace(character ? "/" : "/character");
+  }, [character, loading, router, user]);
 
   async function handleLogin() {
     if (firebaseReady) {
