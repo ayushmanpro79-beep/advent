@@ -1,0 +1,13 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+  font-size: 31px;
+  font-weight: 760;
+  letter-spacing: 0;
+}
+
+.brand span {
+  line-height: 1;
+}

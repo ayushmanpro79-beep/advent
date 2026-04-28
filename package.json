@@ -1,0 +1,24 @@
+{
+  "name": "goal-description-we-are-building-project",
+  "version": "1.0.0",
+  "description": "Project Advent frontend-only prototype",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "firebase": "^12.12.1",
+    "firebase-admin": "^13.8.0",
+    "lucide-react": "^1.11.0",
+    "next": "^16.2.4",
+    "openai": "^6.34.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
+}

@@ -1,0 +1,31 @@
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: white;
+  font-weight: 760;
+  font-size: 14px;
+}
+
+.purple {
+  background: var(--primary);
+}
+
+.green {
+  background: #34a853;
+}
+
+.orange {
+  background: #e97119;
+}
+
+.blue {
+  background: #335bdc;
+}
+
+.dark {
+  background: #403b68;
+}

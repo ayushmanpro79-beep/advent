@@ -1,0 +1,78 @@
+.homeGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 440px;
+  gap: 30px;
+  align-items: start;
+}
+
+.homeGrid h1 {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: 0;
+}
+
+.lead {
+  margin: 8px 0 22px;
+  color: var(--muted-strong);
+  font-size: 16px;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.panelHeader h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.primaryButton {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 7px;
+  color: white;
+  background: linear-gradient(135deg, #7549e6, var(--primary));
+  padding: 0 18px;
+  font-weight: 720;
+  box-shadow: 0 12px 22px rgba(101, 52, 216, 0.22);
+}
+
+.campaigns {
+  display: grid;
+  gap: 16px;
+}
+
+.state,
+.error {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: white;
+  color: var(--muted-strong);
+}
+
+.error {
+  color: #b42318;
+}
+
+@media (max-width: 1180px) {
+  .homeGrid {
+    grid-template-columns: 1fr;
+  }
+}

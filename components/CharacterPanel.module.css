@@ -1,0 +1,118 @@
+.panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.88);
+  padding: 24px 20px;
+  box-shadow: var(--shadow);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.heading h2,
+.panel h3,
+.panel h4 {
+  margin: 0;
+}
+
+.heading h2 {
+  font-size: 19px;
+}
+
+.panel h3 {
+  margin-top: 22px;
+  font-size: 24px;
+}
+
+.panel h4 {
+  margin-top: 18px;
+  font-size: 17px;
+}
+
+.panel p {
+  color: var(--muted-strong);
+  line-height: 1.55;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 18px 0;
+}
+
+.xpRow {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted-strong);
+  font-size: 14px;
+}
+
+.progress {
+  height: 6px;
+  border-radius: 999px;
+  background: #e4e5ec;
+  margin: 10px 0 24px;
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  width: 58%;
+  height: 100%;
+  background: var(--primary);
+}
+
+.vitals {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 0;
+}
+
+.vitals div {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  border-right: 1px solid var(--border);
+}
+
+.vitals div:last-child {
+  border-right: 0;
+}
+
+.vitals svg:first-child {
+  color: var(--red);
+}
+
+.vitals div:nth-child(2) svg {
+  color: #6c7487;
+}
+
+.vitals div:nth-child(3) svg {
+  color: #9b5a27;
+}
+
+.vitals span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.inventory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.inventory span {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 13px;
+  color: #30384a;
+  background: #f8f8fb;
+}

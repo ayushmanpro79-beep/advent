@@ -1,0 +1,223 @@
+.room {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 24px;
+}
+
+.story {
+  min-width: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.roomHeader,
+.gmBanner,
+.infoCard,
+.about {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.roomHeader {
+  min-height: 74px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+}
+
+.roomHeader h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.roomHeader p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--muted-strong);
+  font-size: 14px;
+}
+
+.roomHeader button {
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: white;
+  color: var(--primary);
+  padding: 0 17px;
+  font-weight: 650;
+}
+
+.gmBanner {
+  display: flex;
+  gap: 14px;
+  padding: 16px 18px;
+  color: var(--primary);
+  background: linear-gradient(90deg, #fbf8ff, var(--primary-soft));
+}
+
+.gmBanner div {
+  min-width: 0;
+}
+
+.gmBanner strong {
+  margin-right: 10px;
+}
+
+.gmBanner span {
+  background: #e7dcff;
+  border-radius: 6px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.gmBanner p {
+  margin: 7px 0 0;
+  color: var(--muted-strong);
+  font-size: 13px;
+}
+
+.messages {
+  max-height: 560px;
+  overflow: auto;
+  display: grid;
+  gap: 10px;
+  padding-right: 4px;
+}
+
+.composer {
+  height: 52px;
+  display: grid;
+  grid-template-columns: 1fr 54px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background: white;
+  overflow: hidden;
+}
+
+.composer input {
+  min-width: 0;
+  border: 0;
+  outline: none;
+  padding: 0 20px;
+}
+
+.composer button {
+  border: 0;
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  background: white;
+}
+
+.helper {
+  margin: 0 0 8px 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.error {
+  margin: 0 0 8px 18px;
+  color: #b42318;
+  font-size: 13px;
+}
+
+.state {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  color: var(--muted-strong);
+  padding: 18px;
+}
+
+.side {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.infoCard,
+.about {
+  padding: 18px;
+}
+
+.infoCard h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 13px 0;
+  color: var(--muted-strong);
+  font-size: 14px;
+}
+
+.infoRow strong {
+  color: var(--primary);
+  background: var(--primary-soft);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.progress {
+  height: 6px;
+  border-radius: 999px;
+  background: #e6e4ed;
+  overflow: hidden;
+  margin-top: 18px;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+}
+
+.secondaryButton {
+  width: 100%;
+  height: 40px;
+  margin-top: 16px;
+  border: 1px solid var(--primary);
+  border-radius: 7px;
+  background: white;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.worldStatus {
+  margin: 10px 0 0;
+  color: var(--muted-strong);
+  font-size: 12px;
+}
+
+.about {
+  color: var(--muted-strong);
+  font-size: 13px;
+}
+
+.about h3 {
+  color: var(--primary);
+  margin: 0 0 12px;
+}
+
+.about p {
+  margin: 9px 0;
+}
+
+@media (max-width: 1180px) {
+  .room {
+    grid-template-columns: 1fr;
+  }
+}

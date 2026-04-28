@@ -1,0 +1,45 @@
+.panel {
+  max-width: 760px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.panel h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.panel p {
+  color: var(--muted-strong);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  padding: 14px 0;
+}
+
+.ok,
+.bad {
+  min-width: 58px;
+  border-radius: 999px;
+  padding: 6px 9px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.ok {
+  color: #047849;
+  background: #dff8ea;
+}
+
+.bad {
+  color: #b42318;
+  background: #fee4e2;
+}

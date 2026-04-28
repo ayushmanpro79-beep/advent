@@ -1,0 +1,13 @@
+.header {
+  margin-bottom: 22px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.header p {
+  color: var(--muted-strong);
+  margin: 8px 0 0;
+}

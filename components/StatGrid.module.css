@@ -1,0 +1,30 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stat {
+  min-height: 104px;
+  display: grid;
+  place-items: center;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #fff, #fcfbff);
+}
+
+.stat span {
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 760;
+}
+
+.stat strong {
+  font-size: 25px;
+}
+
+.stat small {
+  color: var(--muted-strong);
+  font-size: 13px;
+}

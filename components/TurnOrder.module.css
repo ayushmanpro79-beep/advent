@@ -1,0 +1,52 @@
+.turnOrder {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  padding: 14px 18px;
+}
+
+.turnOrder > span {
+  color: var(--muted-strong);
+  font-size: 13px;
+}
+
+.players {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.turnItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.turnItem p {
+  margin: 0;
+  color: #30384a;
+  font-size: 14px;
+}
+
+.turnItem strong {
+  color: #9aa0af;
+  margin-left: 12px;
+}
+
+.turnOrder b {
+  border-radius: 7px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.empty {
+  color: var(--muted);
+  margin: 0;
+}

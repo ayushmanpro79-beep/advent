@@ -1,0 +1,113 @@
+.page {
+  max-width: 760px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.card p {
+  color: var(--muted-strong);
+}
+
+.card label {
+  display: grid;
+  gap: 9px;
+  margin-top: 18px;
+  font-weight: 680;
+}
+
+.card input,
+.card textarea {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 13px;
+  outline: none;
+  background: white;
+}
+
+.card input {
+  height: 50px;
+}
+
+.card textarea {
+  height: 130px;
+  resize: none;
+}
+
+.group {
+  margin-top: 22px;
+}
+
+.group > span {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 680;
+}
+
+.segment {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.segment button {
+  height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  color: var(--muted-strong);
+  font-weight: 760;
+}
+
+.segment .selected {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.note {
+  margin-top: 16px;
+  border: 1px solid #d7c5ff;
+  border-radius: 8px;
+  background: var(--surface-soft);
+  color: var(--primary);
+  padding: 13px;
+}
+
+.primary {
+  width: 100%;
+  height: 50px;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  background: var(--primary);
+  font-weight: 760;
+}
+
+.success {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+  color: #047849;
+}
+
+.error {
+  margin-top: 14px;
+  color: #b42318;
+}
+
+.success a {
+  color: var(--primary);
+  font-weight: 760;
+}
